@@ -1,0 +1,38 @@
+#getStarted {
+  padding:40px;
+  margin:20px;
+  border-radius:10px;
+  background-color:white;
+  color:#3a539bff;
+  font-size:50px;
+  cursor: pointer;
+}
+
+#getStarted:hover{
+  background-color: #1d3476;
+  color:white;
+  transition: all 0.3s;
+}
+
+#desc {
+  max-width: 600px;
+  color:white;
+  font-size:30px;
+  text-align:center;
+  margin:20px;
+  line-height:50px;
+  font-weight: bold;
+}
+
+#desc2 {
+  max-width: 600px;
+  color: #90a8ea;
+  font-size:20px;
+  text-align:center;
+  margin:20px;
+  line-height:30px;
+}
+
+a {
+  text-decoration: none;
+}

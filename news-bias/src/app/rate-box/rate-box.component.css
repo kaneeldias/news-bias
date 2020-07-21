@@ -1,0 +1,19 @@
+#rate-box{
+  border-radius:5px;
+}
+
+#title{
+  font-size:25px;
+  line-height:25px;
+  background-color:#019875;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  color:white;
+  padding:20px;
+}
+
+#content{
+  padding:20px;
+  font-size:16px;
+  line-height:25px;
+}

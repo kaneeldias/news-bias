@@ -1,0 +1,16 @@
+#header{
+  width:100%;
+  height:50px;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:#3a539bff;
+  color:white;
+  line-height:50px;
+  vertical-align:middle;
+}
+
+.title{
+  color:white;
+  font-weight: bold;
+  font-size:20px;
+}

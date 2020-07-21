@@ -1,0 +1,5 @@
+<a style="color:white" *ngIf="!logged" href="{{url}}">Login</a>
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="logged" >
+  <span style="line-height: 50px; vertical-align: middle; margin-right: 10px;">{{info.name}}</span>
+  <img style="width:30px; height:30px; border-radius:50px;" src="{{info.picture}}"/>
+</div>
