@@ -5,6 +5,7 @@ module.exports = function(app){
     app.post('/auth', async function (req, res) {
         let access_token;
         try {
+            console.log(access_token);
             let data = await googleAuth.getAccessTokenFromCode(req.body.code);
             access_token = data.access_token;
         }
@@ -41,4 +42,11 @@ module.exports = function(app){
     app.get('/auth/info', function (req, res) {
         res.send(req.session.info);
     });
+
+    app.get('/auth/logout', async function (req, res) {
+        req.session.logged = false;
+        req.session.info = undefined;
+        res_body = {message: "logged out"};
+        res.status(200).send(res_body);
+    })
 }

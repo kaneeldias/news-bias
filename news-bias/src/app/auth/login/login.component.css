@@ -5,3 +5,21 @@ a {
 a:hover{
   text-decoration: underline;
 }
+
+a .menu_item {
+  color:black;
+}
+
+a .menu_item:hover{
+  text-decoration: none !important;
+}
+.menu_item {
+  background-color:white;
+  padding:10px;
+  cursor:pointer;
+  transition: all 0.2s;
+}
+
+.menu_item:hover{
+  background-color:#CCCCCC;
+}

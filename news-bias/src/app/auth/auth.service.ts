@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -13,12 +12,11 @@ export class AuthService {
 
   private checkLogged(): void {
     console.log("He");
-    this.http.get(environment.serverUrl+"/auth/check",
+    this.http.get(window["env"]["serverUrl"] +"/auth/check",
       {withCredentials: true})
       .subscribe((data) => {
         if(data === true){
           localStorage.setItem('logged', "true");
-          console.log("Be");
           this.fetchInfo();
         }
         else localStorage.setItem('logged', "false");
@@ -26,7 +24,7 @@ export class AuthService {
   }
 
   private fetchInfo(): void {
-    this.http.get(environment.serverUrl+"/auth/info",
+    this.http.get(window["env"]["serverUrl"] +"/auth/info",
       {withCredentials: true})
       .subscribe((data: any) => {
         let info = {
@@ -40,6 +38,17 @@ export class AuthService {
 
   public refresh(): void {
     this.checkLogged();
+  }
+
+  public logout(): void {
+    this.http.get(window["env"]["serverUrl"] +"/auth/logout",
+      {withCredentials: true})
+      .subscribe((data: any) => {
+        localStorage.setItem('logged', "false");
+        localStorage.removeItem('info');
+        window.location.replace(window["env"]["localhostUrl"]);
+      });
+
   }
 
   getLogged(): boolean {

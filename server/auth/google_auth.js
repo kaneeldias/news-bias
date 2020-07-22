@@ -26,7 +26,7 @@ module.exports = {
             data: {
                 client_id: environment.googleAuth.clientId,
                 client_secret: environment.googleAuth.clientSecret,
-                redirect_uri: environment.clientUrl+'/auth',
+                redirect_uri: environment.clientUrl + "/auth",
                 grant_type: 'authorization_code',
                 code,
             },

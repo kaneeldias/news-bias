@@ -9,7 +9,7 @@ import {AuthService} from "../auth.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  url = environment.googleAuthUrl;
+  url = window["env"]["googleAuthUrl"];
   logged = false;
   info = {
     name: null,
@@ -17,10 +17,16 @@ export class LoginComponent implements OnInit {
     picture: null
   }
 
+  isOpen = false;
+
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.logged = this.authService.getLogged();
     this.info = this.authService.getInfo();
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

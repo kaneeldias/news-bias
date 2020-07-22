@@ -1,6 +1,6 @@
-<div id="content" fxLayout="column" fxLayoutAlign="end center" fxLayoutGap="40px">
+<div id="content" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="40px">
 
-  <div fxLayout="column" fxLayoutAlign="stretch stretch">
+  <div fxLayout="row" fxLayoutAlign="stretch stretch">
     <mat-form-field>
       <mat-label>Category</mat-label>
       <mat-select [(ngModel)]="rating.category">
@@ -11,17 +11,17 @@
     </mat-form-field>
   </div>
 
-  <div fxLayout="column" fxLayoutAlign="stretch stretch">
+  <div fxLayout="row" fxLayoutAlign="stretch stretch">
     <!--<mat-label>Rating</mat-label>-->
     <mat-radio-group
       aria-labelledby="example-radio-group-label"
       class="example-radio-group"
-      fxLayout="column" fxFlex="33" fxLayoutGap="40px"
+      fxLayout="row" fxFlex="100" fxLayoutGap="20px"
       [(ngModel)]="rating.polarity">
-      <div fxLayout="row" *ngFor="let polarity of polarities" fxLayoutAlign="start center">
+      <div fxLayout="column" *ngFor="let polarity of polarities" fxLayoutAlign="start center">
         <mat-radio-button class="example-radio-button" [value]="polarity.value">
         </mat-radio-button>
-        <mat-label>{{polarity.viewValue}}</mat-label>
+        <mat-label style="text-align:center;">{{polarity.viewValue}}</mat-label>
       </div>
     </mat-radio-group>
   </div>

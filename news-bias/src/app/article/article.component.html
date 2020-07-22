@@ -1,10 +1,11 @@
-<div fxLayout="row">
+<div fxLayout="column" layout-align="center center">
   <div id="article" class="mat-card" style="max-width:800px;">
     <div id="title">{{article.title}}</div>
     <div id="content">{{article.content}}</div>
   </div>
-  <div fxLayout="column" fxLayoutAlign="start center">
-    <app-rate-box [rating]="rating"></app-rate-box>
-    <app-navigation-box (nextArticleFunc)="nextArticle()"></app-navigation-box>
-  </div>
 </div>
+<div id="rate" class="mat-card" fxLayout="row" fxLayoutAlign="center center">
+  <app-rate-box [rating]="rating"></app-rate-box>
+  <app-navigation-box (nextArticleFunc)="nextArticle()"></app-navigation-box>
+</div>
+

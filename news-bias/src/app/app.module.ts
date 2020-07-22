@@ -20,6 +20,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import {OverlayModule} from "@angular/cdk/overlay";
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { FooterComponent } from './layout/footer/footer.component';
         MatRadioModule,
         MatButtonModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        OverlayModule
     ],
   providers: [],
   bootstrap: [AppComponent]

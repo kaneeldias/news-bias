@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import * as queryString from 'query-string';
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
 import {AuthService} from "./auth.service";
 
 
@@ -21,12 +20,15 @@ export class AuthComponent implements OnInit {
       console.log(`An error occurred: ${urlParams.error}`);
     } else {
       console.log(`The code is: ${urlParams.code}`);
-      this.http.post(environment.serverUrl+ "/auth",
+      this.http.post(window["env"]["serverUrl"]+ "/auth",
         {code: urlParams.code},
         {withCredentials: true})
         .subscribe((data: any) => {
           this.authService.refresh();
-          window.location.replace(environment.localhostUrl);
+          setTimeout(function(){
+            window.location.replace(window["env"]["localhostUrl"]);
+          }, 1000)
+
         });
     }
 

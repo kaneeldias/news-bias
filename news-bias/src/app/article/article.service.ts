@@ -12,7 +12,7 @@ export class ArticleService {
   constructor(private http: HttpClient) { }
 
   getArticle(targetArticle: Article): void {
-    this.http.get(environment.serverUrl + "/fetch").subscribe((article: Article) => {
+    this.http.get(window["env"]["serverUrl"] + "/fetch").subscribe((article: Article) => {
         targetArticle.url = article.url;
         targetArticle.title = article.title;
         targetArticle.content = article.content;
@@ -20,7 +20,7 @@ export class ArticleService {
   }
 
   rateArticle(article:Article, rating:{}): void {
-    this.http.post(environment.serverUrl + "/rate", {
+    this.http.post(window["env"]["serverUrl"] + "/rate", {
       url: article.url,
       rating: rating
     },

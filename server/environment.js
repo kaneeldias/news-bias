@@ -1,7 +1,15 @@
+require('dotenv').config();
+
 module.exports = {
     googleAuth: {
-        clientId:"472942420517-5h7r67cpinkijshh58j0abgsqeicestr.apps.googleusercontent.com",
-        clientSecret:"eobeNhpRg7bo5IRg5JtnVjAs"
+        clientId: process.env.clientId,
+        clientSecret: process.env.clientSecret
     },
-    clientUrl: "http://localhost:4200"
+    clientUrl: process.env.clientUrl,
+    database: {
+        host: process.env["database.host"],
+        user: process.env["database.user"],
+        password: process.env["database.password"],
+        database: process.env["database.database"]
+    }
 }

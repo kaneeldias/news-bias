@@ -1,14 +1,20 @@
 var mysql = require('mysql');
+var environment = require("./environment.js");
 
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "news-bias"
+    host: environment.database.host,
+    user: environment.database.user,
+    password: environment.database.password,
+    database: environment.database.database
 });
 con.connect(function(err) {
-    if (err) throw err;
-    //console.log("Connected!");
+    if (err) {
+        console.log(err);
+    }
+    else{
+        console.log("Connected!");
+    }
+    console.log("HOST: " + environment.database.host);
 });
 
 module.exports = {

@@ -1,5 +1,20 @@
 <a style="color:white" *ngIf="!logged" href="{{url}}">Login</a>
-<div fxLayout="row" fxLayoutAlign="center center" *ngIf="logged" >
-  <span style="line-height: 50px; vertical-align: middle; margin-right: 10px;">{{info.name}}</span>
-  <img style="width:30px; height:30px; border-radius:50px;" src="{{info.picture}}"/>
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="logged">
+  <!--<span style="line-height: 50px; vertical-align: middle; margin-right: 10px;">{{info.name}}</span>-->
+  <img style="width:30px; height:30px; cursor:pointer; border-radius:50px; margin-top:10px;" src="{{info.picture}}"
+       (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin"/>
+
+  <ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="isOpen"
+  >
+    <div fxLayout="column" class="mat-card" style="border-radius:50px;">
+      <div class="menu_item">View Profile</div>
+      <div class="menu_item">Leaderboard</div>
+      <div class="menu_item" (click)="logout()">Log Out</div>
+    </div>
+  </ng-template>
+
 </div>
+

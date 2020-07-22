@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.authService.getLogged()){
-      window.location.replace(environment.googleAuthUrl);
+      window.location.replace(window["env"]["googleAuthUrl"]);
     }
   }
 
