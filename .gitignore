@@ -11,8 +11,17 @@ news-bias/out-tsc
 # dependencies
 news-bias/node_modules
 server/node_modules
-
+classifiers/category_classifier
 scraper/venv
+classifiers/models/jong-rnn/glove
+classifiers/models/jong-rnn/venv2
+classifiers/models/jong-rnn/venv
+classifiers/models/jong-rnn/venv3.5
+classifiers/models/jong-rnn/saved_model
+classifiers/models/roomylee/GoogleNews-vectors-negative300.bin.gz
+classifiers/models/roomylee/GoogleNews-vectors-negative300.bin
+classifiers/models/roomylee/runs
+classifiers/models/bert
 
 # IDEs and editors
 /.idea
